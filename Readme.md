@@ -1,4 +1,4 @@
-# Alt school Exams
+latest # Alt school Exams
 
 An e-commerce startup has been kind enough to provide us with event level data around orders and customers on their platform, you've been tasked with analyzing the events data to help them answer a few questions. Kindly read through and thoroughly follow the instructions provided in this document and the readme file in the `questions` Folder.
 
