@@ -29,7 +29,7 @@ create table if not exists ALT_SCHOOL.CUSTOMERS
 
 -- TODO: provide the command to copy the customers data in the /data folder into ALT_SCHOOL.CUSTOMERS
 
-COPY ALT_SCHOOL.PRODUCTS (customer_id, device_id, location, currency)
+COPY ALT_SCHOOL.CUSTOMERS (customer_id, device_id, location, currency)
 FROM '/data/customers.csv' DELIMITER ',' CSV HEADER;
 
 
@@ -72,13 +72,15 @@ create table if not exists ALT_SCHOOL.EVENTS
 (
     -- TODO: PROVIDE THE FIELDS
     event_id bigint primary key,
-    
+    customer_id uuid,
+    event_data jsonb, 
+    event_timestamp timestamp
 );
 
 -- TODO: provide the command to copy ALT_SCHOOL.EVENTS data into POSTGRES
 
-COPY ALT_SCHOOL.ORDERS (order_id, customer_id, status, checked_out_at)
-FROM '/data/orders.csv' DELIMITER ',' CSV HEADER;
+COPY ALT_SCHOOL.EVENTS (event_id, customer_id, event_data, event_timestamp)
+FROM '/data/events.csv' DELIMITER ',' CSV HEADER;
 
 
 
